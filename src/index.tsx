@@ -1,12 +1,21 @@
+import 'firebase/analytics';
+import * as firebase from 'firebase/app';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import firebaseConfig from './config';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
+
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
