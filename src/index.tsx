@@ -1,5 +1,6 @@
 import 'firebase/analytics';
 import * as firebase from 'firebase/app';
+import 'firebase/firestore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
@@ -10,6 +11,7 @@ import * as serviceWorker from './serviceWorker';
 
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+firebase.firestore();
 
 ReactDOM.render(
   <React.StrictMode>
