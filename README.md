@@ -1,44 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple todo web app written using TypeScript, React and Firebase.
 
-## Available Scripts
+## Setup
 
-In the project directory, you can run:
+### 1. Create a Firebase project and register a web app
 
-### `npm start`
+Instructions can be found [here](https://firebase.google.com/docs/web/setup). Only steps 1 and 2 are required, but take note of the Firebase config object.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 2. Enable Google Sign-In
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+In the **Auth** section of the [Firebase console](https://console.firebase.google.com/), under the **Sign in method** tab, enable the **Google** sign in method.
 
-### `npm test`
+### 3. Get the code and add the Firebase config
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In the project root directory, run `npm install`. Then create a `/src/config.ts` file that exports the Firebase config object as the default.
 
-### `npm run build`
+```
+const firebaseConfig = {
+    // ...
+};
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export default firebaseConfig;
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### 4. Run `npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+After starting the dev server, a web browser will load `http://localhost:3000`.
 
-### `npm run eject`
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [TypeScript](https://www.typescriptlang.org/)
+* [React](https://reactjs.org/)
+* Firebase [Auth](https://firebase.google.com/products/auth) and [Cloud Firestore](https://firebase.google.com/products/firestore)
